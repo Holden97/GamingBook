@@ -79,6 +79,7 @@
   * [渲染](unity/xuan-ran/README.md)
     * [Unity.Graphics](unity/xuan-ran/unity.graphics.md)
   * [CIL](unity/cil.md)
+  * [设置鼠标样式](unity/she-zhi-shu-biao-yang-shi.md)
 * [模块化设计](gong-neng-mo-kuai/README.md)
   * [对于模块化设计的一些思考](gong-neng-mo-kuai/dui-yu-mo-kuai-hua-she-ji-de-yi-xie-si-kao.md)
   * [按键设置](gong-neng-mo-kuai/an-jian-she-zhi/README.md)
