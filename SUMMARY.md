@@ -115,7 +115,7 @@
   * [关键字](c/guan-jian-zi/README.md)
     * [lock](c/guan-jian-zi/lock.md)
     * [internal](c/guan-jian-zi/internal.md)
-    * [Event](c/guan-jian-zi/event.md)
+    * [event](c/guan-jian-zi/event.md)
   * [装箱与拆箱/强制转换](c/zhuang-xiang-yu-chai-xiang-qiang-zhi-zhuan-huan.md)
   * [命名规范](c/ming-ming-gui-fan.md)
   * [编译过程](c/bian-yi-guo-cheng.md)
