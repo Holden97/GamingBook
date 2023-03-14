@@ -193,6 +193,61 @@ public static class IEnumerableExtension
  }
 ```
 
-参考
+C# 排序的時候可以使用LINQ達到多條件的排序方法.
 
-1.简单linq查询[https://kw0006667.wordpress.com/2013/05/29/clinq%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8-from-where-select/](https://kw0006667.wordpress.com/2013/05/29/clinq%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8-from-where-select/)
+以下為直接舉例:
+
+```cs
+class Animal {
+	public string name=string.Empty;
+	public int age=0;
+}
+
+
+void main (){
+	List<Animal> listAnimal = new List<Animal>{
+	new Animal {name=dog ,age=4},
+	new Animal {name=cat ,age=7},
+	new Animal {name=pig ,age=3},
+	new Animal {name=horse ,age=4},
+	new Animal {name=sheep ,age=7},
+	};        
+
+   //想先用 age排序(大->小) ,再用name 排序(A->Z)
+   listAnimal=listAnimal.OrderByDescending(x=>x.age).ThenBy(x=>x.name).ToList();
+   //結果:
+   //name=cat   ,age=7
+   //name=sheep ,age=7
+   //name=dog   ,age=4
+   //name=horse ,age=4
+   //name=pig   ,age=3
+   
+}
+```
+
+以下為複製參考1的說明
+
+### OrderBy <a href="#orderby" id="orderby"></a>
+
+設定**第一個**排序條件，而且此排序條件為**遞增**排序。
+
+### OrderByDescending <a href="#orderbydescending" id="orderbydescending"></a>
+
+設定**第一個**排序條件，而且此排序條件為**遞減**排序。
+
+### ThenBy <a href="#thenby" id="thenby"></a>
+
+設定**第二個以後**的排序條件，此排序條件為**遞增**排序。
+
+#### ThenByDescending <a href="#thenbydescending" id="thenbydescending"></a>
+
+設定**第二個以後**的排序條件，此排序條件為**遞減**排序。
+
+
+
+
+
+## 参考
+
+1. 简单linq查询[https://kw0006667.wordpress.com/2013/05/29/clinq%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8-from-where-select/](https://kw0006667.wordpress.com/2013/05/29/clinq%E7%B0%A1%E5%96%AE%E4%BD%BF%E7%94%A8-from-where-select/)
+2. [https://dotblogs.com.tw/shanna/2019/11/06/linqorderbythenby](https://dotblogs.com.tw/shanna/2019/11/06/linqorderbythenby)
