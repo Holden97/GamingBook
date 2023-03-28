@@ -115,7 +115,9 @@ using (md)
 
 using语句为实现了IDisposable的类型对象调用Dispose方法，using语句能够保证使用的对象的Dispose方法在using语句块结束时被调用，无论是否有异常被抛出。C#编译器在编译时自动为using语句加上try/finally块，所以using的本质和异常捕获语句一样，但是语法更为简洁。所有using使用的对象都应该在using语句开始后再初始化，以保证所有的对象都能够被Dispose。
 
-## **二、创建命名空间别名**
+## **二、创建别名**
+
+#### 命名空间
 
 using为命名空间创建别名的用法规则为：
 
@@ -142,6 +144,12 @@ using VertexData = System.Tuple<UnityEngine.Vector3, UnityEngine.Vector3, UnityE
 
 ```
         HashSet<VertexData> pointsHash = new HashSet<VertexData>();
+```
+
+#### 类的命名
+
+```
+using IDialogueActor = DialogueSystem.IDialogueActor;
 ```
 
 ## **三、引用命名空间**
