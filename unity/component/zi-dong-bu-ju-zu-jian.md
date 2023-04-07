@@ -40,7 +40,7 @@ Content Size Fitter有一个当尺寸变化时的回调，但是类型是protect
 
 **游戏的实际效果 下面为改变文字后的效果（额外的操作也顺利完成）**
 
-![](https://oss-emcsprod-public.modb.pro/wechatSpider/modb\_20211213\_955b804a-5c1d-11ec-be0f-fa163eb4f6be.png)  ****  ![](https://oss-emcsprod-public.modb.pro/wechatSpider/modb\_20211213\_9597a962-5c1d-11ec-be0f-fa163eb4f6be.png)
+![](https://oss-emcsprod-public.modb.pro/wechatSpider/modb\_20211213\_955b804a-5c1d-11ec-be0f-fa163eb4f6be.png)  ![](https://oss-emcsprod-public.modb.pro/wechatSpider/modb\_20211213\_9597a962-5c1d-11ec-be0f-fa163eb4f6be.png)
 
 \
 

@@ -24,4 +24,4 @@
 
 而普通的，不需要滚动的列表设置，将溢出处理修改为“可见”即可，例如：
 
-![](<../../.gitbook/assets/image (1).png>)
+![](<../../.gitbook/assets/image (1) (2).png>)
