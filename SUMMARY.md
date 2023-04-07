@@ -162,3 +162,4 @@
   * [Rimworld反编译源码阅读小记](yuan-ma-yue-du-bi-ji/rimworld-fan-bian-yi-yuan-ma-yue-du-xiao-ji.md)
   * [XNode源码阅读](yuan-ma-yue-du-bi-ji/xnode-yuan-ma-yue-du.md)
 * [项目阅读](xiang-mu-yue-du.md)
+* [GOAP](goap.md)
