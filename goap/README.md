@@ -125,11 +125,26 @@ A\*算法的迭代步骤如下：
 
 在图论中，如果一个[有向图](https://baike.baidu.com/item/%E6%9C%89%E5%90%91%E5%9B%BE?fromModule=lemma\_inlink)无法从某个顶点出发经过若干条边回到该点，则这个图是一个有向无环图（DAG图，Directed acyclic graph）。
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>有向无环图图例</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>有向无环图图例</p></figcaption></figure>
 
 在A\*算法中，启发式估价函数（Heuristics）用于估计从当前节点到目标节点的最短距离。在ReGoap中，启发式估价函数可以基于预定义的GOAP目标状态和当前状态来计算。例如，可以使用曼哈顿距离或欧几里得距离等方式计算两个状态之间的距离。
+
+## ReGoap中使用了ConcurrentDictionary
+
+ConcurrentDictionary表示可由多个线程同时访问的键/值对的线程安全集合。
+
+ConcurrentDictionary\<TKey, TValue> framework4出现的，可由多个线程同时访问，且线程安全。用法同Dictionary很多相同，但是多了一些方法。ConcurrentDictionary 属于System.Collections.Concurrent 命名空间按照MSDN上所说：
+
+System.Collections.Concurrent 命名空间提供多个线程安全集合类。当有多个线程并发访问集合时，应使用这些类代替 System.Collections 和 System.Collections.Generic 命名空间中的对应类型。
+
+线程安全是多线程编程时的计算机程序代码中的一个概念。 在拥有共享数据的多条线程并行执行的程序中，线程安全的代码会通过同步机制保证各个线程都可以正常且正确的执行，不会出现数据污染等意外情况。
+
+## Regoap执行过程
+
+GetSetting在最前，用于设置stackData.settings中的数据。GetPreconditions和GetEffects在它之后，因为要获取stackData.settings中的数据，并根据数据确定前置条件和结果。
 
 ## 参考资料
 
 1. [https://zhuanlan.zhihu.com/p/138003795](https://zhuanlan.zhihu.com/p/138003795)
 2. ChatGPT3.5
+3. [https://www.youtube.com/watch?v=gm7K68663rA](https://www.youtube.com/watch?v=gm7K68663rA)
