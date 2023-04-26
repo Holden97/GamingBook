@@ -100,6 +100,7 @@
   * [AI设计](gong-neng-mo-kuai/ai-she-ji/README.md)
     * [行为树](gong-neng-mo-kuai/ai-she-ji/hang-wei-shu.md)
     * [状态机](gong-neng-mo-kuai/ai-she-ji/zhuang-tai-ji.md)
+    * [GOAP](gong-neng-mo-kuai/ai-she-ji/goap.md)
   * [技能系统](gong-neng-mo-kuai/ji-neng-xi-tong.md)
 * [算法](suan-fa/README.md)
   * [排序算法](suan-fa/pai-xu-suan-fa/README.md)
