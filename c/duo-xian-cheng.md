@@ -146,6 +146,81 @@ Unity 使用多线程注意:
 3. UnityEngine 定义的基本结构(int, float, struct 定义的数据类型)可以在分线程计算，如 Vector3(struct)可以, 但 Texture2d(class,根父类为 Object) 不可以。
 4. UnityEngine 定义的基本类型的函数可以在分线程运行
 
+
+
+### C# Task.Delay() 和 Thread.Sleep() 区别
+
+1、Thread.Sleep 是同步延迟，Task.Delay异步延迟。
+
+2、Thread.Sleep 会阻塞线程，Task.Delay不会。
+
+3、Thread.Sleep不能取消，Task.Delay可以。
+
+4\. Task.Delay() 比 Thread.Sleep() 消耗更多的资源，但是Task.Delay()可用于为方法返回Task类型；或者根据CancellationToken取消标记动态取消等待
+
+**5. Task.Delay() 实质创建一个运行给定时间的任务， Thread.Sleep() 使当前线程休眠给定时间。**
+
+```javascript
+using System;
+using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+
+        {
+            Task delay = asyncTask();
+            syncCode();
+            delay.Wait();
+            Console.ReadLine();
+        }
+        static async Task asyncTask()
+        {
+            var sw = new Stopwatch();
+            sw.Start();
+            Console.WriteLine("async: Starting *");
+            Task delay = Task.Delay(5000);
+            Console.WriteLine("async: Running for {0} seconds **", sw.Elapsed.TotalSeconds);
+            await delay;
+            Console.WriteLine("async: Running for {0} seconds ***", sw.Elapsed.TotalSeconds);
+            Console.WriteLine("async: Done ****");
+        }
+        static void syncCode()
+        {
+            var sw = new Stopwatch();
+            sw.Start();
+            Console.WriteLine("sync: Starting *****");
+            Thread.Sleep(5000);
+            Console.WriteLine("sync: Running for {0} seconds ******", sw.Elapsed.TotalSeconds);
+            Console.WriteLine("sync: Done *******");
+        }
+    }
+}
+```
+
+复制
+
+_运行结果：_
+
+<figure><img src="https://ask.qcloudimg.com/http-save/yehe-7674702/rluscwa70w.png?imageView2/2/w/1200" alt=""><figcaption></figcaption></figure>
+
+我们可以看到这个代码的执行过程中遇到`await`后就会返回执行了，待await的代码执行完毕后才继续执行接下来的代码的！
+
+\----------------------------------------------------------
+
+_Use `Thread.Sleep` when you want to block the current thread._ **要阻止当前线程时，请使用`Thread.Sleep` 。**
+
+_Use `Task.Delay` when you want a logical delay without blocking the current thread._ **如果需要逻辑延迟而不阻塞当前线程，请使用`Task.Delay` 。**
+
+_Efficiency should not be a paramount concern with these methods._ **对于这些方法，效率不应该是最重要的问题。** _Their primary real-world use is as retry timers for I/O operations, which are on the order of seconds rather than milliseconds._ **它们在现实世界中的主要用途是作为I / O操作的重试计时器，其数量级为秒而不是毫秒**
+
+_Also, it is interesting to notice that `Thread.Sleep` is far more accurate, ms accuracy is not really a problem, while `Task.Delay` can take 15-30ms minimal._ **另外，有趣的是， `Thread.Sleep`准确性要高得多，ms的准确性并不是真正的问题，而`Task.Delay`占用时间最少为15-30ms。** _The overhead on both functions is minimal compared to the ms accuracy they have (use `Stopwatch` Class if you need something more accurate)._ **与它们具有的ms精度相比，这两个函数的开销是最小的（如果您需要更精确的信息，请使用`Stopwatch` Class）。** _`Thread.Sleep` still ties up your Thread, `Task.Delay` release it to do other work while you wait._ **`Thread.Sleep`仍然占用您的线程， `Task.Delay`释放它以便在您等待时进行其他工作。**
+
 ## 参考资料
 
 1. [https://www.jianshu.com/p/854649bc0ce6](https://www.jianshu.com/p/854649bc0ce6)
+2. [https://cloud.tencent.com/developer/article/1682240](https://cloud.tencent.com/developer/article/1682240)
