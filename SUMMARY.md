@@ -10,6 +10,7 @@
   * [序列化](shu-ju-chi-jiu-hua/xu-lie-hua.md)
 * [性能优化](xing-neng-you-hua/README.md)
   * [预加载和Addressable](xing-neng-you-hua/yu-jia-zai-he-addressable.md)
+  * [sqrMagnitude和magnitude比较](xing-neng-you-hua/sqrmagnitude-he-magnitude-bi-jiao.md)
 * [Unity](unity/README.md)
   * [特效](unity/te-xiao/README.md)
     * [怎样做一个简单的淡出效果？](unity/te-xiao/zen-yang-zuo-yi-ge-jian-dan-de-dan-chu-xiao-guo.md)
