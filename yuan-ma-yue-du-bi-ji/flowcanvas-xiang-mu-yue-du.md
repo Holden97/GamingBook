@@ -1,6 +1,6 @@
-# 项目阅读
+# FlowCanvas项目阅读
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 UI控制流文档位置。
 
@@ -10,5 +10,5 @@ OnPointerUp是Selectable的一个虚方法，在继承Selectable类的子类中�
 
 
 
-<figure><img src=".gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 

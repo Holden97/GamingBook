@@ -18,9 +18,8 @@
 
 定位到具体代码，大致如下:
 
-| <pre><code>1Transform transform = gameObject?.transform;
-</code></pre> |
-| ---------------------------------------------------------------------- |
+<table data-header-hidden><thead><tr><th width="600"></th></tr></thead><tbody><tr><td><pre><code>1Transform transform = gameObject?.transform;
+</code></pre></td></tr></tbody></table>
 
 当前 GameObject 已经被销毁仍然尝试读取其 transform，但是这里明明已经使用 `?.` 操作符判定了，为什么还会出现这个问题？下面尝试模拟这种情况。
 
