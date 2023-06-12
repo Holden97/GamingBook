@@ -145,6 +145,7 @@
   * [函数调用形参和实参之间加冒号](c/han-shu-tiao-yong-xing-can-he-shi-can-zhi-jian-jia-mao-hao.md)
   * [Struct](c/struct/README.md)
     * [Rect](c/struct/rect.md)
+  * [String和StringBuilder](c/string-he-stringbuilder.md)
 * [Git](git.md)
 * [C++](c++.md)
 * [设计模式](she-ji-mo-shi/README.md)
