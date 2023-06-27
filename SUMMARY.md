@@ -147,6 +147,7 @@
     * [Rect](c/struct/rect.md)
   * [String和StringBuilder](c/string-he-stringbuilder.md)
   * [MemberwiseClone](c/memberwiseclone.md)
+  * [闭包](c/bi-bao.md)
 * [Git](git.md)
 * [C++](c++.md)
 * [设计模式](she-ji-mo-shi/README.md)
