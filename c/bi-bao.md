@@ -14,7 +14,7 @@
         }
 ```
 
-i的最终值是Buttons.value.Count-1，而index的最终只是循环到当前的i。
+i的最终值是Buttons.value.Count-1，而index的最终值是循环到当前的i。
 
 参考资料
 
