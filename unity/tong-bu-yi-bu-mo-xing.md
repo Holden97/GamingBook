@@ -29,7 +29,7 @@ Unity的报错里面有一些很有意思的地方：**要求UnityEngine API必�
 
 2.async/await
 
-被async关键字标记了的方法，只能返回Task,Task\<T>和void，对该Task的Result的获取会阻塞调用线程。
+被async关键字标记了的方法，只能返回Task,Task\<T>和void类型的结果；对返回的Task的Result的获取会阻塞调用线程。
 
 在async方法执行到await关键字时会处于挂起的状态，直到该异步动作完成后才恢复继续执行方法后面的动作。
 
@@ -43,3 +43,4 @@ Unity的报错里面有一些很有意思的地方：**要求UnityEngine API必�
 2. [https://zhuanlan.zhihu.com/p/197335532](https://zhuanlan.zhihu.com/p/197335532)&#x20;
 3. [https://www.cnblogs.com/CreateMyself/p/5983208.html](https://www.cnblogs.com/CreateMyself/p/5983208.html)
 4. [https://ca2didi.xyz/202204/why-we-need-unitask/](https://ca2didi.xyz/202204/why-we-need-unitask/)
+5. [https://suika.blog.csdn.net/article/details/126559085?spm=1001.2101.3001.6650.2\&utm\_medium=distribute.pc\_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-126559085-blog-96462356.235%5Ev38%5Epc\_relevant\_sort\_base1\&depth\_1-utm\_source=distribute.pc\_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-126559085-blog-96462356.235%5Ev38%5Epc\_relevant\_sort\_base1\&utm\_relevant\_index=5](https://suika.blog.csdn.net/article/details/126559085?spm=1001.2101.3001.6650.2\&utm\_medium=distribute.pc\_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-126559085-blog-96462356.235%5Ev38%5Epc\_relevant\_sort\_base1\&depth\_1-utm\_source=distribute.pc\_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-126559085-blog-96462356.235%5Ev38%5Epc\_relevant\_sort\_base1\&utm\_relevant\_index=5)
