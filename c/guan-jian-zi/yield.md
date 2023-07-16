@@ -1,6 +1,4 @@
-# yield关键字的用法
-
-## yield关键字的用法 <a href="#cyield-guan-jian-zi-de-yong-fa" id="cyield-guan-jian-zi-de-yong-fa"></a>
+# yield
 
 **1.yield实现的功能**\
 **yield return：**\

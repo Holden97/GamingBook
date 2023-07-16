@@ -2,7 +2,7 @@
 
 <figure><img src="../.gitbook/assets/5408097-dcc261ee317a816e.webp" alt=""><figcaption></figcaption></figure>
 
-***
+
 
 [**MonoBehaviour.OnValidate()**](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnValidate.html)
 
