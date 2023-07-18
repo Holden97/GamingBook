@@ -1,9 +1,6 @@
 # Table of contents
 
 * [项目引言](README.md)
-* [程序化生成地面](cheng-xu-hua-sheng-cheng-di-mian/README.md)
-  * [柏林噪声](cheng-xu-hua-sheng-cheng-di-mian/bai-lin-zao-sheng.md)
-  * [Cellular Automata](cheng-xu-hua-sheng-cheng-di-mian/cellular-automata.md)
 * [数据处理](shu-ju-chi-jiu-hua/README.md)
   * [持久化](shu-ju-chi-jiu-hua/chi-jiu-hua/README.md)
     * [XML](shu-ju-chi-jiu-hua/xml.md)
@@ -83,6 +80,11 @@
   * [设置鼠标样式](unity/she-zhi-shu-biao-yang-shi.md)
   * [特殊路径](shu-ju-chi-jiu-hua/cun-chu-lu-jing.md)
   * [同步/异步模型](unity/tong-bu-yi-bu-mo-xing.md)
+* [功能设计](gong-neng-she-ji/README.md)
+  * [程序化生成地面](gong-neng-she-ji/cheng-xu-hua-sheng-cheng-di-mian/README.md)
+    * [柏林噪声](gong-neng-she-ji/cheng-xu-hua-sheng-cheng-di-mian/bai-lin-zao-sheng.md)
+    * [Cellular Automata](gong-neng-she-ji/cheng-xu-hua-sheng-cheng-di-mian/cellular-automata.md)
+  * [物品掉落](gong-neng-she-ji/wu-pin-diao-la.md)
 * [模块设计](gong-neng-mo-kuai/README.md)
   * [对于模块化设计的一些思考](gong-neng-mo-kuai/dui-yu-mo-kuai-hua-she-ji-de-yi-xie-si-kao.md)
   * [按键设置](gong-neng-mo-kuai/an-jian-she-zhi/README.md)
