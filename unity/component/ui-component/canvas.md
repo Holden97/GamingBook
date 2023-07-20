@@ -28,6 +28,8 @@ pixelPerfect选项可以使UI元素更清晰，但是如果Canvas中有很多旋
 
 EventCamera：确定使用哪一个相机检测事件（如鼠标点击事件等），一般情况下，使用渲染场景的相机。
 
+使用该模式时，目前的经验是，不要使用嵌套Canvas。而且Canvas的父节点应该是Transform而不是RectTransform。
+
 ## 相机API参考
 
 ScreenPointToRay会将屏幕上的点投影成射线，而ScreenToWorldPoint是将屏幕上的点投影到制定的相机平面上（具体平面在参数上有所体现），目前“投影到具体layer层的交点”这个需求采用前者去做，因为后者仅仅是名字和这个需求有点关系，实际上一点关系都没有。
