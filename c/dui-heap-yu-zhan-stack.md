@@ -26,8 +26,26 @@
 3. 引用类型变量中的变量一般也存储在堆中。
 4. 值类型变量中的变量会和值类型变量本身一同存储在值类型变量的上下文中。如果值类型变量在方法中声明，那么该变量也会在栈中；如果值类型变量在类中声明，那么它也在堆中。
 
+## 例外
+
+1. 静态变量总是在堆中（不一定在“主堆”（the managed heap）中），且堆块（heap block）与静态变量一一对应。
+2.  匿名方法与委托\
+    匿名函数中，你可以使用包含该匿名函数的方法的局部变量，编译器会生成一个类型，该类型包含匿名方法所需的所有父方法中的局部变量。并在父方法的调用过程中生成该类型的实例，复制所有需要的变量到栈中，匿名方法的局部变量在栈中。\
+
+
+    下列规则适用于 lambda 表达式中的变量范围：
+
+    * 捕获的变量将不会被作为垃圾回收，直至引用变量的委托符合垃圾回收的条件。
+    * 在封闭方法中看不到 Lambda 表达式内引入的变量。
+    * Lambda 表达式无法从封闭方法中直接捕获 [in](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/in-parameter-modifier)、[ref](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/ref) 或 [out](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/out-parameter-modifier) 参数。
+    * lambda 表达式中的 [return](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/statements/jump-statements#the-return-statement) 语句不会导致封闭方法返回。
+    * 如果相应跳转语句的目标位于 Lambda 表达式块之外，Lambda 表达式不得包含 [goto](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/statements/jump-statements#the-goto-statement)、[break](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/statements/jump-statements#the-break-statement) 或 [continue](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/statements/jump-statements#the-continue-statement) 语句。 同样，如果目标在块内部，在 lambda 表达式块外部使用跳转语句也是错误的。
+3. 异步方法与迭代器\
+   异步方法与迭代器的栈帧在方法返回时不能立刻释放，因为异步方法和迭代器在返回后可能仍在执行。
+
 ## 参考资料
 
 1. [https://endjin.com/blog/2022/07/understanding-the-stack-and-heap-in-csharp-dotnet](https://endjin.com/blog/2022/07/understanding-the-stack-and-heap-in-csharp-dotnet)
 2. [https://en.citizendium.org/wiki/Stack\_frame](https://en.citizendium.org/wiki/Stack\_frame) stack frame
 3. [https://learn.microsoft.com/zh-cn/dotnet/api/system.diagnostics.stackframe?view=net-7.0](https://learn.microsoft.com/zh-cn/dotnet/api/system.diagnostics.stackframe?view=net-7.0)
+4. 匿名方法与捕获变量 [https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/lambda-expressions](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/lambda-expressions)
