@@ -156,6 +156,7 @@
   * [MemberwiseClone](c/memberwiseclone.md)
   * [闭包](c/bi-bao.md)
   * [I/O](c/i-o.md)
+  * [堆(heap)与栈(stack)](c/dui-heap-yu-zhan-stack.md)
 * [Git](git.md)
 * [C++](c++.md)
 * [设计模式](she-ji-mo-shi/README.md)
