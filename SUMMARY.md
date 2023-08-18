@@ -10,8 +10,6 @@
   * [预加载和Addressable](xing-neng-you-hua/yu-jia-zai-he-addressable.md)
   * [sqrMagnitude和magnitude比较](xing-neng-you-hua/sqrmagnitude-he-magnitude-bi-jiao.md)
 * [Unity](unity/README.md)
-  * [特效](unity/te-xiao/README.md)
-    * [怎样做一个简单的淡出效果？](unity/te-xiao/zen-yang-zuo-yi-ge-jian-dan-de-dan-chu-xiao-guo.md)
   * [组件](unity/component/README.md)
     * [Camera](unity/component/camera.md)
     * [UI Component](unity/component/ui-component/README.md)
