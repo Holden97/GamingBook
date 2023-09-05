@@ -65,7 +65,7 @@
   * [旋转](unity/xuan-zhuan.md)
   * [数据存储](unity/shu-ju-cun-chu.md)
   * [物理场景模拟](unity/wu-li-chang-jing-mo-ni.md)
-  * [Gizmos与Handler](unity/gizmos-yu-handler.md)
+  * [Gizmos与Handles](unity/gizmos-yu-handler.md)
   * [Physics2D设置一览](unity/physics2d-she-zhi-yi-lan.md)
   * [常见错误及解决](unity/bao-cuo-ji-jie-jue/README.md)
     * [关于特效不可见的查找](unity/bao-cuo-ji-jie-jue/guan-yu-te-xiao-bu-ke-jian-de-cha-zhao.md)
