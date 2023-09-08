@@ -156,6 +156,7 @@
   * [堆(heap)与栈(stack)](c/dui-heap-yu-zhan-stack.md)
 * [Git](git.md)
 * [C++](c++.md)
+* [设计原则](she-ji-yuan-ze.md)
 * [设计模式](she-ji-mo-shi/README.md)
   * [单例模式](she-ji-mo-shi/dan-li-mo-shi.md)
   * [观察者模式](she-ji-mo-shi/guan-cha-zhe-mo-shi.md)
