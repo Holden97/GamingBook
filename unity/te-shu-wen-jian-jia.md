@@ -20,6 +20,8 @@ Editor 文件夹的具体位置会影响其脚本相对于其他脚本的编译�
 
 **注意：**如果脚本位于 Editor 文件夹中，Unity 不允许将派生自 MonoBehaviour 的组件分配给游戏对象。
 
+**注意**：Editor文件夹中的脚本应放于Editor文件夹的根目录下，嵌套文件夹目录下的脚本不会被Unity读取。
+
 ### Editor Default Resources
 
 Editor 脚本可以使用通过 [EditorGUIUtility.Load](https://docs.unity3d.com/cn/2018.4/ScriptReference/EditorGUIUtility.Load.html) 函数按需加载的资源文件。此函数在名为 **Editor Default Resources** 的文件夹中查找资源文件。
