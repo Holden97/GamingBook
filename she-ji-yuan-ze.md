@@ -21,3 +21,7 @@
 | ISP  | 接口隔离原则    | 类之间的依赖关系应该建立在最小的接口上      |
 | CARP | 合成/聚合复用原则 | 尽量使用合成/聚合，而不是通过继承达到复用的目的 |
 | LOD  | 迪米特法则     | 一个软件实体应当尽可能少的与其他实体发生相互作用 |
+
+## 参考资料&#x20;
+
+1. [https://cloud.tencent.com/developer/article/1650116](https://cloud.tencent.com/developer/article/1650116)
