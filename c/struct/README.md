@@ -26,6 +26,50 @@ class是引用类型，创建一个class类型实例被分配在托管堆上。
     }
 ```
 
+## 修改结构体
+
+在结构体的无参方法中修改结构体的字段会创建一个新的结构体实例，原始结构体的字段值不会被修改。结构体是值类型，这意味着每次修改结构体的字段时，都会创建一个新的副本，而不会影响原始结构体的值。
+
+如果你希望修改结构体的字段并将更改保存下来，可以考虑使用引用类型，例如类（class），因为类是引用类型，可以在方法中修改字段并保留更改。
+
+示例：
+
+```csharp
+csharpCopy codepublic struct MyStruct
+{
+    public int Value;
+    
+    public MyStruct(int value)
+    {
+        Value = value;
+    }
+    
+    public void ModifyValue(int newValue)
+    {
+        // 这里创建了一个新的结构体实例来保存修改后的值
+        Value = newValue;
+    }
+}
+
+public class MyClass
+{
+    public int Value;
+    
+    public MyClass(int value)
+    {
+        Value = value;
+    }
+    
+    public void ModifyValue(int newValue)
+    {
+        // 这里直接修改了类的字段值
+        Value = newValue;
+    }
+}
+```
+
+在这个示例中，`MyStruct` 结构体的 `ModifyValue` 方法会创建一个新的结构体实例，而 `MyClass` 类的 `ModifyValue` 方法会直接修改类的字段值。所以，在使用结构体时要小心，确保理解它们的值类型特性。
+
 ## 参考资料
 
 1. C# struct的陷阱：无法修改“...”的返回值，因为它不是变量 [https://blog.csdn.net/onlyou930/article/details/5568319](https://blog.csdn.net/onlyou930/article/details/5568319)
