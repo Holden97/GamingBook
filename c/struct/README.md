@@ -70,6 +70,27 @@ public class MyClass
 
 在这个示例中，`MyStruct` 结构体的 `ModifyValue` 方法会创建一个新的结构体实例，而 `MyClass` 类的 `ModifyValue` 方法会直接修改类的字段值。所以，在使用结构体时要小心，确保理解它们的值类型特性。
 
+慎用List\<T>返回的结构体
+
+假设
+
+```
+public struct SingleWaveEnemiesInfo
+{
+    public List<EnemySpawnInfo> enemies;
+    public int duration;
+}
+
+//声明
+        public List<SingleWaveEnemiesInfo> detectors;
+//那么以下写法是错误的
+        detectors[i].duration = 2;
+//报错为
+//无法修改"List<SingleWaveEnemiesInfo>.this[int]"的返回值，因为它不是变量
+```
+
+目前我的理解是，List的get索引器在返回值值类型数据时，按值传递，故返回的是对应位置数据的副本，所以只能用而无法修改数据。
+
 ## 参考资料
 
 1. C# struct的陷阱：无法修改“...”的返回值，因为它不是变量 [https://blog.csdn.net/onlyou930/article/details/5568319](https://blog.csdn.net/onlyou930/article/details/5568319)
