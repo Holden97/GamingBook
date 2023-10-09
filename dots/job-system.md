@@ -1,8 +1,8 @@
 # Job System
 
-Job System是Unity的并行解决方案。
+**Job System是Unity的并行解决方案。**
 
-几点限制
+## 几点限制
 
 1. JobSystem只能够在主线程使用job.Schedule()和job.Complete()。
 2. job应该继承IJob接口，实现Execute()方法。
