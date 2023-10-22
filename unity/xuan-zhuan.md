@@ -16,7 +16,7 @@
 
 旋转采用欧拉角形式的 [Vector3](https://docs.unity3d.com/cn/2020.2/ScriptReference/Vector3.html) 参数。第二个参数是旋转轴，可以将其设置为本地轴 ([Space.Self](https://docs.unity3d.com/cn/2020.2/ScriptReference/Space.Self.html)) 或全局轴 ([Space.World](https://docs.unity3d.com/cn/2020.2/ScriptReference/Space.World.html))。旋转以欧拉角度数表示。
 
-
+***
 
 public void Rotate (float xAngle, float yAngle, float zAngle, [Space](https://docs.unity3d.com/cn/2020.2/ScriptReference/Space.html) relativeTo= Space.Self);
 
@@ -61,7 +61,7 @@ using UnityEngine;// Transform.Rotate example
 }
 ```
 
-
+***
 
 **2.public void Rotate (**[**Vector3**](https://docs.unity3d.com/cn/2020.2/ScriptReference/Vector3.html) **axis, float angle,** [**Space**](https://docs.unity3d.com/cn/2020.2/ScriptReference/Space.html) **relativeTo= Space.Self);**
 
@@ -78,7 +78,7 @@ using UnityEngine;// Transform.Rotate example
 
 旋转具有轴、角度以及本地或全局参数。旋转轴可以为任何方向。
 
-
+***
 
 public void Rotate ([Vector3](https://docs.unity3d.com/cn/2020.2/ScriptReference/Vector3.html) eulers);
 
@@ -98,7 +98,7 @@ The rotation is relative to the GameObject's local space ([Space.Self](https://d
 this.transform.Rotate(new Vector3(angleX, angleY, angleZ));
 ```
 
-
+***
 
 **3.public void Rotate (float xAngle, float yAngle, float zAngle);**
 
@@ -115,7 +115,7 @@ this.transform.Rotate(new Vector3(angleX, angleY, angleZ));
 
 The rotation is relative to the GameObject's local space ([Space.Self](https://docs.unity3d.com/cn/2020.2/ScriptReference/Space.Self.html)).
 
-
+***
 
 public void Rotate ([Vector3](https://docs.unity3d.com/cn/2020.2/ScriptReference/Vector3.html) axis, float angle);
 

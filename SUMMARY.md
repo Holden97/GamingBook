@@ -17,7 +17,7 @@
       * [Canvas](unity/component/ui-component/canvas.md)
       * [Canvas Group](unity/component/ui-component/canvas-group.md)
     * [Terrain](unity/component/terrain.md)
-    * [Sprite Renderer](unity/component/sprite-renderer.md)
+    * [Sprite/Sprite Renderer](unity/component/sprite-renderer.md)
     * [Sorting Group](unity/component/sorting-group.md)
     * [Animation](unity/component/animation.md)
     * [Animator](unity/component/animator.md)
