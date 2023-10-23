@@ -22,6 +22,8 @@ MeshFilter.mesh只要执行过getter就会导致该meshFilter的.sharedMesh与�
 
 对MeshFilter.sharedMesh修改后，如果想还原被修改后的mesh，只要关掉(退出unity进程)，再重新打开unity的对应项目就可以看到模型还原了&#x20;
 
+在源对象上修改属性，使用mesh的话每次修改属性会从新生成一个对象。 在编辑器下非运行期如果使用shared会修改本地文件，如果不使用sharedmesh会提示内存泄漏。
+
 ## Matrix4x4.Translate
 
 平移方法，使用该方法可将一个mesh整体平移
