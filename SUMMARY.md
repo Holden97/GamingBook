@@ -11,6 +11,7 @@
   * [sqrMagnitude和magnitude比较](xing-neng-you-hua/sqrmagnitude-he-magnitude-bi-jiao.md)
 * [Unity](unity/README.md)
   * [组件](unity/component/README.md)
+    * [AudioMixer](unity/component/audiomixer.md)
     * [Camera](unity/component/camera.md)
     * [UI Component](unity/component/ui-component/README.md)
       * [RectTransform](unity/component/ui-component/recttransform.md)
