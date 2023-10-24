@@ -191,4 +191,6 @@
   * [ECS](dots/ecs.md)
   * [Job System](dots/job-system.md)
   * [Burst Compiler](dots/burst-compiler.md)
+  * [Entities](dots/entities/README.md)
+    * [Baker](dots/entities/baker.md)
 * [Addressable](addressable.md)
