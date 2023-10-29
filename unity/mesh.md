@@ -28,6 +28,13 @@ MeshFilter.mesh只要执行过getter就会导致该meshFilter的.sharedMesh与�
 
 平移方法，使用该方法可将一个mesh整体平移
 
+
+
+## uv
+
+uv坐标数组构成了一个多边形，其中每一个点都对应着对应材质的对应位置点，形象地说，原材质就像一张无线平铺的布料，而mesh通过uv坐标数组来“裁剪”原材质的一部分为自己所用。
+
 ## 参考
 
 1. [https://blog.csdn.net/linjf520/article/details/90601102](https://blog.csdn.net/linjf520/article/details/90601102)
+2. [https://docs.unity3d.com/ScriptReference/Mesh-uv.html](https://docs.unity3d.com/ScriptReference/Mesh-uv.html)
