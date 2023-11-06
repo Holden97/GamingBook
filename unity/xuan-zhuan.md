@@ -143,6 +143,31 @@ Rotate has an axis, angle and the local or global parameters. The rotation axis 
     transform.rotation = rotation;
 ```
 
+## 旋转物体的方式
+
+2D
+
+`A`
+
+`Vector3 dir = target.position - transform.position;`&#x20;
+
+`float angle = Mathf.Atan2(dir.y,dir.x) * Mathf.Rad2Deg;`&#x20;
+
+`transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);`
+
+`B`
+
+```
+    Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+    diff.Normalize();
+
+    float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+    transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+```
+
+
+
 ## 参考资料
 
 1. 官网 [https://docs.unity3d.com/cn/2020.2/ScriptReference/Transform.Rotate.html](https://docs.unity3d.com/cn/2020.2/ScriptReference/Transform.Rotate.html)
+2. [https://discussions.unity.com/t/lookat-2d-equivalent/88118/12](https://discussions.unity.com/t/lookat-2d-equivalent/88118/12)
