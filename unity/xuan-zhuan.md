@@ -143,6 +143,29 @@ Rotate has an axis, angle and the local or global parameters. The rotation axis 
     transform.rotation = rotation;
 ```
 
+## 在ECS中的旋转范例
+
+```
+public partial class AimingAidSystem : SystemBase
+{
+    protected override void OnUpdate()
+    {
+        foreach (var (pp, lt, ltw, e) in SystemAPI.Query<RefRW<ProjectilePreview>, RefRW<LocalTransform>, RefRO<LocalToWorld>>().WithEntityAccess())
+        {
+            DeployController.CheckGroundPosition(Camera.main, out var hitPos);
+            //var apexHeight = math.min(10, math.distance(ltw.ValueRO.Position, hitPos) / 2);
+
+            lt.ValueRW.Rotation = Quaternion.LookRotation(((float3)hitPos - ltw.ValueRO.Position), Vector3.up);
+        }
+    }
+}
+```
+
+在使用API时，要注意到每个坐标位置是否是统一的坐标系，最好都使用世界坐标。
+
+<pre><code><strong> transform.rotation = Quaternion.LookRotation(targetPos- transform.position, Vector3.up);
+</strong></code></pre>
+
 ## 旋转物体的方式
 
 2D
