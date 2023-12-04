@@ -192,6 +192,7 @@
 * [DOTS](dots/README.md)
   * [ECS](dots/ecs/README.md)
     * [博哥的框架理解](dots/ecs/bo-ge-de-kuang-jia-li-jie.md)
+    * [一些注意事项](dots/ecs/yi-xie-zhu-yi-shi-xiang.md)
   * [Job System](dots/job-system.md)
   * [Burst Compiler](dots/burst-compiler.md)
   * [Entities](dots/entities/README.md)
