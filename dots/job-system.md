@@ -63,6 +63,17 @@ job拥有一个Run方法，你可以用它来替代Schedule从而让主线程立
 
 在job中开辟托管内存会难以置信得慢，并且这个job不能利用Unity的Burst编译器来提升性能。Burst是一个新的基于LLVM的后端编译器技术，它会使事情对于你更加简单。它获取C# job并利用你平台的特定功能产生高度优化的机器码。
 
+
+
+## Run/Schedule/ScheduleParallel
+
+Run = single thread on main thread 主线程单一执行
+
+Schedule = single thread on worker thread worker线程单一执行
+
+ScheduleParallel = multi threaded on worker threads worker多线程执行
+
 参考
 
 1. [https://zhuanlan.zhihu.com/p/58125078](https://zhuanlan.zhihu.com/p/58125078)
+2. [https://forum.unity.com/threads/difference-between-schedule-and-scheduleparallel.856567/](https://forum.unity.com/threads/difference-between-schedule-and-scheduleparallel.856567/)
