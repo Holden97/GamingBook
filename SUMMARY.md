@@ -118,6 +118,8 @@
       * [ReGoap.FSMExample源码阅读小记](gong-neng-mo-kuai/ai-she-ji/goap/regoap.fsmexample-yuan-ma-yue-du-xiao-ji.md)
     * [工作队列](gong-neng-mo-kuai/ai-she-ji/gong-zuo-dui-lie.md)
   * [技能系统](gong-neng-mo-kuai/ji-neng-xi-tong.md)
+  * [寻路](gong-neng-mo-kuai/xun-lu/README.md)
+    * [Boid算法](gong-neng-mo-kuai/xun-lu/boid-suan-fa.md)
 * [算法](suan-fa/README.md)
   * [排序算法](suan-fa/pai-xu-suan-fa/README.md)
     * [快速排序](suan-fa/pai-xu-suan-fa/kuai-su-pai-xu.md)
