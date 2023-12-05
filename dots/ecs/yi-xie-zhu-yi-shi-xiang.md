@@ -7,4 +7,5 @@
 ```
 
 2. 使用QueryBuilder时，应该尽量缓存Query；并尽量在System中使用Query。
+3. 提交之前，删除无用log。
 
