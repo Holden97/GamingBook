@@ -93,7 +93,7 @@ List\<T> 本身就有提供排序的方法「Sort」或是 LINQ 提供的擴充�
                          select stu;
 ```
 
-***
+
 
 ### select
 
