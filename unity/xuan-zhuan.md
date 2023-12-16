@@ -188,7 +188,51 @@ public partial class AimingAidSystem : SystemBase
     transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
 ```
 
+不要选错旋转轴
 
+```
+using UnityEngine;
+
+public class CubeRotation : MonoBehaviour
+{
+    public float forwardRotationAngle = -90;
+    public float fRotationAngle = 0;
+    private Quaternion r1;
+    private Quaternion r2;
+
+    private void Update()
+    {
+        r1 = Quaternion.AngleAxis(forwardRotationAngle, Vector3.right);
+        r2 = Quaternion.AngleAxis(fRotationAngle, transform.forward);
+        //这样写是错误的，因为r2获得的旋转是基于 transform.forward，而还没有经过r1旋转之前的transform有别于已经经过r1旋转的rotation
+        transform.rotation = r1 * r2;
+        Debug.Log("transform.forward:" + transform.forward);
+    }
+
+///以下是正确写法
+    //// 初始X轴旋转角度
+    //public float initialXRotation = 10.0f;
+
+    //// 自身Z轴每帧旋转的角度
+    //public float zRotationPerFrame = 2.0f;
+
+    //void Start()
+    //{
+    //    // 初始时绕X轴旋转
+    //    Quaternion initialRotation = Quaternion.AngleAxis(initialXRotation, Vector3.right);
+    //    transform.rotation = initialRotation;
+    //}
+
+    //void Update()
+    //{
+    //    // 在每帧中绕Z轴旋转
+    //    Quaternion zRotation = Quaternion.AngleAxis(zRotationPerFrame, transform.forward);
+    //    transform.rotation *= zRotation;
+    //}
+
+}
+
+```
 
 ## 参考资料
 
