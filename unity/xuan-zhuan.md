@@ -1,5 +1,9 @@
 # 旋转
 
+1、unity用的是左手坐标系，握拳伸出左手，大拇指指向坐标轴正向、四指方向是旋转的正方向，和大部分系统的右手坐标系是有很大区别的。
+
+2、unity的欧拉角和四元数也是很变态的，违反常规的，欧拉角采用的是yxz顺归，从来没有哪个软件和硬件会采用这种顺序。四元数采用的是xyzw顺序，而标准的教材和文献乃至硬件、软件都是遵循wxyz的顺序
+
 ## 一、Rotate
 
 **1.public void Rotate (**[**Vector3**](https://docs.unity3d.com/cn/2020.2/ScriptReference/Vector3.html) **eulers,** [**Space**](https://docs.unity3d.com/cn/2020.2/ScriptReference/Space.html) **relativeTo= Space.Self);**
