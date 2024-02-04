@@ -10,4 +10,8 @@ public void LoadFarm()
 }
 </code></pre>
 
+## **EditorOnly**
+
+标签下的物体及其子物体只会在编辑器中出现。
+
 [^1]: 
