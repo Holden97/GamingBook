@@ -265,3 +265,43 @@ Developer: Zara Ali
 Last Reviewed: 19/10/2012
 Remarks: 
 ```
+
+## gettype和typeof的区别
+
+`GetType` 和 `typeof` 是用于获取类型信息的两种不同方法，它们在使用上有一些区别：
+
+1. **`GetType` 是实例方法：**
+   * `GetType` 是实例方法，用于从对象实例获取其实际类型信息。
+   *   例如，对于对象 `obj`，您可以调用 `obj.GetType()` 来获取实际类型的 `Type` 对象。
+
+       ```csharp
+       csharpCopy codeobject obj = "Hello";
+       Type objectType = obj.GetType();
+       ```
+2. **`typeof` 是运算符：**
+   * `typeof` 是一个运算符，用于获取编译时类型信息，而不需要实例。
+   *   例如，`typeof(int)` 返回 `System.Int32` 的 `Type` 对象。
+
+       ```csharp
+       csharpCopy codeType intType = typeof(int);
+       ```
+3. **`typeof` 是编译时确定的：**
+   * `typeof` 在编译时确定类型信息，因此它对于泛型类型参数非常有用。
+   *   在泛型代码中，您可以使用 `typeof(T)` 获取泛型参数的类型信息，而无需创建实例。
+
+       ```csharp
+       csharpCopy codepublic void SomeMethod<T>()
+       {
+           Type genericType = typeof(T);
+       }
+       ```
+4. **`GetType` 是运行时确定的：**
+   * `GetType` 在运行时确定类型信息，因此它适用于已创建的对象实例。
+   *   对于已知对象实例，您可以使用 `GetType` 获取其实际类型。
+
+       ```csharp
+       csharpCopy codeobject obj = "Hello";
+       Type objectType = obj.GetType();
+       ```
+
+总的来说，`typeof` 主要用于编译时获取类型信息，而 `GetType` 主要用于运行时获取对象实例的类型信息。选择使用哪个取决于您的需求和上下文。
