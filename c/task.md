@@ -3,7 +3,7 @@
 在 C# 中，可以使用 `Task` 类型和 `await` 关键字来执行异步操作。以下是一个简单的示例：
 
 ```
-csharp复制代码async Task<int> MyAsyncMethod()
+async Task<int> MyAsyncMethod()
 {
     // 等待一个异步操作完成
     await Task.Delay(1000);
@@ -18,7 +18,7 @@ csharp复制代码async Task<int> MyAsyncMethod()
 要调用这个异步方法并获取其返回值，可以使用如下代码：
 
 ```
-csharp复制代码int result = await MyAsyncMethod();
+int result = await MyAsyncMethod();
 ```
 
 在上面的代码中，`await MyAsyncMethod()` 表达式将会等待异步方法完成，并返回其结果。由于 `MyAsyncMethod()` 返回一个整数值，因此可以将其赋给一个整数类型的变量 `result`。
