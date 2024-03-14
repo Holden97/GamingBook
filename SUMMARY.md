@@ -169,6 +169,7 @@
   * [堆(heap)与栈(stack)](c/dui-heap-yu-zhan-stack.md)
   * [manager type/unmanager type](c/manager-type-unmanager-type.md)
   * [逐元素乘法](c/zhu-yuan-su-cheng-fa.md)
+  * [throw](c/throw.md)
 * [Git](git.md)
 * [C++](c++.md)
 * [设计原则](she-ji-yuan-ze.md)
