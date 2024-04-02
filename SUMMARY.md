@@ -128,6 +128,7 @@
   * [搜索算法](suan-fa/sou-suo-suan-fa.md)
   * [查找算法](suan-fa/cha-zhao-suan-fa.md)
 * [C#](c/README.md)
+  * [排序](c/pai-xu.md)
   * [泛型](c/fan-xing.md)
   * [在Unity中使用C#自定义属性](c/zai-unity-zhong-shi-yongczi-ding-yi-shu-xing.md)
   * [程序集](c/cheng-xu-ji.md)
