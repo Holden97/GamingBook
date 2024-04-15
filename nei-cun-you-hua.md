@@ -80,6 +80,35 @@ Playerprefs set 和get 是文件读写操作，高频操作会影响性能。这
 
 比如if (go.tag == “human”)最好换成if (go.CompareTag (“human”))。因为访问物体的tag属性会在堆上额外的分配空间。
 
+
+
+bool -> System.Boolean (布尔型，其值为 true 或者 false)，1字节[^1]
+
+byte -> System.Byte (字节型， 1 字节，表示 8 位正整数，范围 0 \~ 255)
+
+sbyte -> System.SByte (带符号字节型， 1 字节，表示 8 位整数，范围 -128 \~ 127)
+
+char -> System.Char (字符型，2字节，表示 1 个 Unicode 字符)
+
+short -> System.Int16 (短整型，2 字节，表示 16 位整数，范围 -32,768 \~ 32,767)
+
+ushort -> System.UInt16 (无符号短整型，2 字节，表示 16 位正整数，范围 0 \~ 65,535)
+
+uint -> System.UInt32 (无符号整型，4 字节，表示 32 位正整数，范围 0 \~ 4,294,967,295)
+
+int -> System.Int32 (整型，4 字节， 32 位整数，范围 -2,147,483,648 到 2,147,483,647)
+
+float -> System.Single (单精度浮点型，4 个字节)
+
+ulong -> System.UInt64 (无符号长整型，8 字节，表示 64 位正整数，范围 0 \~ 大约 10 的 20 次方)
+
+long -> System.Int64 (长整型，8 字节，表示 64 位整数，范围大约 -(10 的 19) 次方 到 10 的 19 次方)
+
+double -> System.Double (双精度浮点型，8 个字节)
+
 参考
 
 1. [https://peakcoder.com/unity3d/2016/12/16/unity3d-gc](https://peakcoder.com/unity3d/2016/12/16/unity3d-gc)
+2. [https://stackoverflow.com/questions/28514373/what-is-the-size-of-a-boolean-in-c-does-it-really-take-4-bytes](https://stackoverflow.com/questions/28514373/what-is-the-size-of-a-boolean-in-c-does-it-really-take-4-bytes)
+
+[^1]: [https://stackoverflow.com/questions/28514373/what-is-the-size-of-a-boolean-in-c-does-it-really-take-4-bytes](https://stackoverflow.com/questions/28514373/what-is-the-size-of-a-boolean-in-c-does-it-really-take-4-bytes)
