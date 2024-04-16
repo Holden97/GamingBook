@@ -89,7 +89,7 @@ Console.WriteLine("i的值是:" + i.ToString());
 
 ## 强制转换
 
-尽量不要使用强制转换，而改用as和is来假设。
+尽量不要使用强制转换，而改用as和is来假设。as过程中不产生新的对象[^1]。
 
 强制转换尽量用在明确知道目标对象类型的情况下。更多范例参见参考4.
 
@@ -105,3 +105,5 @@ Convert.ToInt32被设计成一个通用的转换函数。它的作用比强制�
 2. [https://learn.microsoft.com/en-us/dotnet/api/system.convert.toint32?view=net-8.0\&redirectedfrom=MSDN#overloads](https://learn.microsoft.com/en-us/dotnet/api/system.convert.toint32?view=net-8.0\&redirectedfrom=MSDN#overloads)
 3. [https://www.cnblogs.com/dotnet261010/p/12326344.html](https://www.cnblogs.com/dotnet261010/p/12326344.html)
 4. 强制转换 [https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/types/casting-and-type-conversions](https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/types/casting-and-type-conversions)
+
+[^1]: [https://blog.csdn.net/shanniuliqingming/article/details/122395677](https://blog.csdn.net/shanniuliqingming/article/details/122395677)
