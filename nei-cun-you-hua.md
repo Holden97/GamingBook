@@ -4,6 +4,8 @@
 
 [HOME](https://peakcoder.com/)[DAILY NOTES](https://peakcoder.com/daily/)[ABOUT](https://peakcoder.com/about/)[INDIE GAMES](https://peakcoder.com/indie%20games/)[GUESTBOOK](https://peakcoder.com/guestbook/)[CATEGORIES](https://peakcoder.com/categories/)[TAGS](https://peakcoder.com/tags/)[SUBSCRIBE](https://peakcoder.com/feed/)
 
+**性能允许的情况下，应该打开deep profile。**
+
 使用Profiler的时候经常会看到一些GC Alloc，GC Alloc多了会影响帧数。
 
 产生GC的本质是在heap上频繁申请内存，比如在Update()中使用new 关键字实例化reference type 对象，而像Vector3 struct 这类 value type在栈上分配内存，则不会产生GC。 但有时候在一个脚本中并没有使用任何一个 new 关键字，也会产生GC。以下几条guidelines能够帮助消除游戏中产生的不必要的GC。
@@ -80,6 +82,8 @@ Playerprefs set 和get 是文件读写操作，高频操作会影响性能。这
 
 比如if (go.tag == “human”)最好换成if (go.CompareTag (“human”))。因为访问物体的tag属性会在堆上额外的分配空间。
 
+**10.留意get属性器内部的内存分配情况。**
+
 
 
 bool -> System.Boolean (布尔型，其值为 true 或者 false)，1字节[^1]
@@ -105,6 +109,10 @@ ulong -> System.UInt64 (无符号长整型，8 字节，表示 64 位正整数�
 long -> System.Int64 (长整型，8 字节，表示 64 位整数，范围大约 -(10 的 19) 次方 到 10 的 19 次方)
 
 double -> System.Double (双精度浮点型，8 个字节)
+
+
+
+
 
 参考
 
