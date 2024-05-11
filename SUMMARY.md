@@ -171,6 +171,7 @@
   * [manager type/unmanager type](c/manager-type-unmanager-type.md)
   * [逐元素乘法](c/zhu-yuan-su-cheng-fa.md)
   * [throw](c/throw.md)
+  * [Dic](c/dic.md)
 * [Git](git.md)
 * [C++](c++.md)
 * [设计原则](she-ji-yuan-ze.md)
