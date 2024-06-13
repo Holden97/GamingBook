@@ -115,6 +115,86 @@ function Update () {
 
 当没有给Raycast函数传layerMask参数时，仅仅只忽略使用IgnoreRaycast层的碰撞器。这是投射光线时忽略某些碰撞器的最简单方法。
 
+
+
+**使用Physics.Raycast(ray, out var hitInfo, 100, LayerMask.NameToLayer("Ground"));得到的hitinfo.collider.gameobject的层级不在ground层，为什么？ChatGPT**
+
+在 Unity 中，当使用 `Physics.Raycast` 时，第四个参数是一个 `LayerMask`，而不是一个单一的图层索引。因此，如果你直接传递 `LayerMask.NameToLayer("Ground")` 的返回值给 `Physics.Raycast`，你实际上传递的是一个图层索引，这会导致 Raycast 无法正确地识别应该检测的图层。
+
+正确的用法是构建一个 `LayerMask`，包含你想要检测的图层。可以使用 `LayerMask.GetMask` 方法或者通过位操作来构建。
+
+假设Ground的layer是7，那么**LayerMask.NameToLayer("Ground")**得到的结果是7,但是第四个参数需要的值是2^7=128，即使用**LayerMask.GetMask("Ground")**得到的值
+
+#### 正确的使用方法
+
+1. **使用 `LayerMask.GetMask` 方法**：这个方法可以直接根据图层名称创建一个 `LayerMask`。
+
+```csharp
+csharp复制代码using UnityEngine;
+
+public class RaycastExample : MonoBehaviour
+{
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitInfo;
+
+            // Use LayerMask.GetMask to create a mask for the "Ground" layer
+            int layerMask = LayerMask.GetMask("Ground");
+
+            if (Physics.Raycast(ray, out hitInfo, 100, layerMask))
+            {
+                Debug.Log("Hit object: " + hitInfo.collider.gameObject.name);
+                Debug.Log("Hit object layer: " + LayerMask.LayerToName(hitInfo.collider.gameObject.layer));
+            }
+        }
+    }
+}
+```
+
+2. **使用位掩码**：如果你需要指定多个图层，可以使用位掩码来组合多个图层。
+
+```csharp
+csharp复制代码using UnityEngine;
+
+public class RaycastExample : MonoBehaviour
+{
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitInfo;
+
+            // Create a bitmask that includes the "Ground" layer
+            int layerMask = 1 << LayerMask.NameToLayer("Ground");
+
+            if (Physics.Raycast(ray, out hitInfo, 100, layerMask))
+            {
+                Debug.Log("Hit object: " + hitInfo.collider.gameObject.name);
+                Debug.Log("Hit object layer: " + LayerMask.LayerToName(hitInfo.collider.gameObject.layer));
+            }
+        }
+    }
+}
+```
+
+#### 详细解释
+
+* **`LayerMask.GetMask` 方法**：这个方法接受一个或多个图层名称，并返回一个包含这些图层的 `LayerMask`。它可以处理多个图层名称，并返回一个适合用于 `Physics.Raycast` 的掩码。
+* **位操作**：`1 << LayerMask.NameToLayer("Ground")` 通过位移操作创建一个掩码，该掩码仅包含 "Ground" 图层。
+
+#### 常见错误
+
+* **误用图层索引**：直接使用 `LayerMask.NameToLayer` 返回的图层索引作为 `Physics.Raycast` 的图层掩码会导致 Raycast 无法正确工作，因为 `Physics.Raycast` 需要的是一个位掩码，而不是一个单一的图层索引。
+* **图层拼写错误**：确保传递给 `LayerMask.GetMask` 和 `LayerMask.NameToLayer` 的图层名称拼写正确，且与 Unity 编辑器中的图层名称完全匹配（区分大小写）。
+
+#### 总结
+
+使用 `Physics.Raycast` 时，确保正确地创建和传递图层掩码。如果需要检测特定图层，请使用 `LayerMask.GetMask` 或通过位操作创建掩码，而不是直接使用图层索引。这样可以确保 Raycast 正确地识别和检测到指定图层上的碰撞体。
+
 参考
 
 1. [https://gwb.tencent.com/community/detail/115070](https://gwb.tencent.com/community/detail/115070)
