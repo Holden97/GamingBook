@@ -238,6 +238,71 @@ public class CubeRotation : MonoBehaviour
 
 ```
 
+## 累加旋转要左乘！
+
+## 设置一个Quaternion endRotation值后，如何使其围绕世界坐标的y轴旋转随机值，并将这个值和前一个值累计
+
+要让一个 `Quaternion` 进行围绕世界坐标系的 `Y` 轴旋转一个随机角度，并将这个旋转值累计到前一个旋转值上，你可以按照以下步骤进行操作：
+
+1. **设置初始 `Quaternion`**：这个是你要开始旋转的 `endRotation`。
+2. **生成随机旋转角度**：围绕 `Y` 轴的旋转角度。
+3. **计算新的旋转**：将随机旋转与 `endRotation` 累加。
+
+#### 示例代码
+
+```csharp
+csharp复制代码using UnityEngine;
+
+public class RotateAroundYAxis : MonoBehaviour
+{
+    public Quaternion endRotation;  // 初始旋转
+    public float minRotation = -30f; // 随机旋转角度的最小值
+    public float maxRotation = 30f;  // 随机旋转角度的最大值
+
+    void Start()
+    {
+        // 初始化endRotation，假设它是当前对象的初始旋转
+        endRotation = transform.rotation;
+
+        // 生成围绕Y轴的随机旋转角度
+        float randomYRotation = Random.Range(minRotation, maxRotation);
+
+        // 创建一个绕Y轴旋转的四元数
+        Quaternion randomRotation = Quaternion.Euler(0, randomYRotation, 0);
+
+        // 将随机旋转累加到endRotation上
+        endRotation = randomRotation * endRotation;
+
+        // 应用新的旋转值到对象
+        transform.rotation = endRotation;
+
+        // 输出新的旋转
+        Debug.Log("New Rotation: " + endRotation.eulerAngles);
+    }
+}
+```
+
+#### 代码解释
+
+1. **初始化 `endRotation`**:
+   * `endRotation` 代表了对象的初始旋转。
+   * 在这个示例中，`endRotation` 初始化为对象的当前旋转，即 `transform.rotation`。
+2. **生成随机旋转角度**:
+   * `Random.Range(minRotation, maxRotation)` 生成一个在 `minRotation` 和 `maxRotation` 之间的随机值（例如：-30 到 30 度）。
+3. **创建随机旋转 `Quaternion`**:
+   * `Quaternion.Euler(0, randomYRotation, 0)` 创建一个绕世界坐标系 `Y` 轴的四元数旋转。
+4. **累加旋转**:
+   * `randomRotation * endRotation` 是将新的 `Y` 轴旋转累加到原始旋转上。
+   * 由于四元数的乘法并非交换律，因此顺序是重要的。这里我们将 `randomRotation` 放在左侧，以确保它应用在 `endRotation` 之前。
+5. **应用旋转**:
+   * `transform.rotation = endRotation` 将累加后的旋转应用到对象。
+6. **调试输出**:
+   * 使用 `Debug.Log` 输出旋转值，以便在控制台查看结果。
+
+#### 结果
+
+* 对象将围绕世界坐标系的 `Y` 轴旋转一个随机角度，并且这个旋转会累加到前一个旋转上，从而形成连续的旋转效果。
+
 ## 参考资料
 
 1. 官网 [https://docs.unity3d.com/cn/2020.2/ScriptReference/Transform.Rotate.html](https://docs.unity3d.com/cn/2020.2/ScriptReference/Transform.Rotate.html)
