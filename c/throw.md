@@ -81,7 +81,7 @@ catch (Exception e)
 
 #### `try-catch` 语句 <a href="#the-try-catch-statement" id="the-try-catch-statement"></a>
 
-使用 `try-catch` 语句处理在执行代码块期间可能发生的异常。 将代码置于 `try` 块中可能发生异常的位置。 使用 _catch 子句_指定要在相应的 `catch` 块中处理的异常的基类型：
+使用 `try-catch` 语句处理在执行代码块期间可能发生的异常。 将代码置于 `try` 块中可能发生异常的位置。 使用 _catch 子&#x53E5;_&#x6307;定要在相应的 `catch` 块中处理的异常的基类型：
 
 C#复制
 

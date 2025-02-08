@@ -19,7 +19,7 @@ sb.Append('def');　　//不会被销毁，而是直接追加到后面。
 
 总结：上面的a1和sb在输出结果一样的。但是在内存分配上面来说就区别很大了。
 
-[回到顶部](https://www.cnblogs.com/cang12138/p/7323709.html#\_labelTop)
+[回到顶部](https://www.cnblogs.com/cang12138/p/7323709.html#_labelTop)
 
 #### **2.String与StringBuilder的区别**
 
@@ -98,7 +98,7 @@ Console.WriteLine(sb); //结果：Hello World?
 
 (1)在这==之前先讲一下：可能java程序员看到这里的时候会感觉有一点懵。在java中String类型它都是放在堆中的。而C#则不同，微软对String类型进行优化
 
-(2)微软在处理字符串的时候用到**散列表：**它是什么呢？简单理解就是当你创建了字符串"china"这个字符串的时候，当你再创建这个字符串的时候，编译器是不会再去开辟新的内存来存储的。它会直接指向第一次创建的地址。
+(2)微软在处理字符串的时候用到**散列表：**&#x5B83;是什么呢？简单理解就是当你创建了字符串"china"这个字符串的时候，当你再创建这个字符串的时候，编译器是不会再去开辟新的内存来存储的。它会直接指向第一次创建的地址。
 
 (3)看如下代码：
 
@@ -141,7 +141,7 @@ Console.WriteLine(Object.ReferenceEquals(sb1, sb2));    //False
 
 &#x20;
 
-[回到顶部](https://www.cnblogs.com/cang12138/p/7323709.html#\_labelTop)
+[回到顶部](https://www.cnblogs.com/cang12138/p/7323709.html#_labelTop)
 
 #### **总结**
 

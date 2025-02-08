@@ -55,7 +55,7 @@ soringOrder也是Render的一个属性，这个order是设置一个数字，数�
 
 Shader中对Tags设置的“Queue”。
 
-RenderQueue 2500是透明与不透明的分水岭。优先绘制不透明物体，再绘制_透明_物体。 通过RenderQueue来判断。小于等于_2500_的是不透明物体，大于的是_透明_物体。
+RenderQueue 2500是透明与不透明的分水岭。优先绘制不透明物体，再绘&#x5236;_&#x900F;&#x660E;_&#x7269;体。 通过RenderQueue来判断。小于等&#x4E8E;_&#x32;50&#x30;_&#x7684;是不透明物体，大于的&#x662F;_&#x900F;&#x660E;_&#x7269;体。
 
 如果上述几项都相同，那就要看renderQueue了，renderQueure是Material的一个属性，其实就是Shader中的renderQueue，这个也是一个int属性，数值越小，越靠前渲染。
 

@@ -123,7 +123,7 @@ function Update () {
 
 正确的用法是构建一个 `LayerMask`，包含你想要检测的图层。可以使用 `LayerMask.GetMask` 方法或者通过位操作来构建。
 
-假设Ground的layer是7，那么**LayerMask.NameToLayer("Ground")**得到的结果是7,但是第四个参数需要的值是2^7=128，即使用**LayerMask.GetMask("Ground")**得到的值
+假设Ground的layer是7，那么**LayerMask.NameToLayer("Ground")**&#x5F97;到的结果是7,但是第四个参数需要的值是2^7=128，即使用**LayerMask.GetMask("Ground")**&#x5F97;到的值
 
 #### 正确的使用方法
 
