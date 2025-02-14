@@ -1,7 +1,6 @@
 # Table of contents
 
-* [项目引言](README.md)
-* [DOTS](dots/README.md)
+* [DOTS](README.md)
   * [ECS](dots/ecs/README.md)
     * [博哥的框架理解](dots/ecs/bo-ge-de-kuang-jia-li-jie.md)
     * [一些注意事项](dots/ecs/yi-xie-zhu-yi-shi-xiang.md)
