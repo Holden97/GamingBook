@@ -146,3 +146,12 @@ data
 元件是GObject,组件是GComponent，组件是元件的一种。
 
 元件是舞台上的最小组成单位。
+
+
+
+FGUI图集模糊的处理
+
+选中模糊的图集文件
+
+1. 不勾选图集的Generate Mipmaps
+2. 勾选Override For Windows,Mac,Linux；将Max Size改成FGUI中的纹理集的最大尺寸。
