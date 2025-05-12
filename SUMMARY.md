@@ -206,3 +206,5 @@
   * [优先队列](shu-ju-jie-gou/you-xian-dui-lie.md)
 * [GameAIPro3阅读笔记](gameaipro3-yue-du-bi-ji.md)
 * [内存优化](nei-cun-you-hua.md)
+* [2D游戏中的AI设计](2d-you-xi-zhong-de-ai-she-ji/README.md)
+  * [寻路](2d-you-xi-zhong-de-ai-she-ji/xun-lu.md)
